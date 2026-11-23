@@ -21,3 +21,10 @@ Client-facing scoping questionnaire for Signal Theory website projects. Built wi
 
     npm install
     TEAM_PASSWORD=choose-one npm run dev
+
+## Deploy on Vercel
+
+1. Import this repo as a Vercel project. The framework is set to Next.js in `vercel.json`.
+2. Under Storage, create a Blob store with private access and connect it to the project.
+3. Under Settings, then Environment Variables, add `TEAM_PASSWORD`.
+4. Redeploy so the storage and password take effect.
