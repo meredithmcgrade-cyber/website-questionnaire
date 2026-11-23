@@ -28,3 +28,7 @@ Client-facing scoping questionnaire for Signal Theory website projects. Built wi
 2. Under Storage, create a Blob store with private access and connect it to the project.
 3. Under Settings, then Environment Variables, add `TEAM_PASSWORD`.
 4. Redeploy so the storage and password take effect.
+
+## How the tier is recommended
+
+The rules live in `lib/tier.js`. The tier comes from creative output and from whether the site works like software. Site size never changes the tier and shows up as a scoping flag instead.
