@@ -187,3 +187,7 @@ input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visib
 /* A legend sits on the fieldset border by default. Float it so it stays inside the card. */
 .question legend.q-title { float: left; }
 .question legend.q-title + * { clear: both; }
+
+/* The start screen has one button, so it sits in the middle. */
+.nav-inner.center { justify-content: center; }
+.nav-inner.center .btn { flex: 0 1 320px; }

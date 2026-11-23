@@ -124,7 +124,7 @@ export default function Questionnaire() {
           <div className="topbar-inner">
             <span className="brand">Signal Theory</span>
             <span className="eyebrow" aria-live="polite">
-              {done ? 'Sent' : step === 0 ? 'Start' : step === REVIEW ? 'Review' : `Step ${step} of ${SECTIONS.length}`}
+              {done ? 'Sent' : step === 0 ? '' : step === REVIEW ? 'Review' : `Step ${step} of ${SECTIONS.length}`}
             </span>
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function Questionnaire() {
       {!done && (
         <div className="nav">
           <div className="wrap">
-            <div className="nav-inner">
+            <div className={`nav-inner${step === 0 ? ' center' : ''}`}>
               {step > 0 && (
                 <button type="button" className="btn ghost" onClick={() => goTo(step - 1)}>
                   Back
