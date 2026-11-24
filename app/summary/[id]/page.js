@@ -59,6 +59,53 @@ export default async function Summary({ params }) {
           )}
         </section>
 
+        <section className="card" aria-labelledby="addons">
+          <div className="card-head">
+            <h3 id="addons">Add-ons</h3>
+            {rec.addOns.length > 0 && <span className="tag">{rec.addOns.length} outside this tier</span>}
+          </div>
+          {rec.tier === 4 ? (
+            <p>Tier 4 is a custom proposal, so everything they asked for is scoped in its own discovery phase.</p>
+          ) : rec.addOns.length === 0 ? (
+            <p>Everything they asked for fits within this tier.</p>
+          ) : (
+            <>
+              <p className="meta">These asks go beyond what {rec.tierInfo.name} includes. Scope and price each one separately.</p>
+              <ul className="addons">
+                {rec.addOns.map((x) => (
+                  <li key={x.key}>
+                    <div className="addon-head">
+                      <strong>{x.title}</strong>
+                      <span className={`level level-${x.level.toLowerCase()}`}>{x.level} effort</span>
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>The ask</dt>
+                        <dd>{x.asked}</dd>
+                      </div>
+                      <div>
+                        <dt>In the tier</dt>
+                        <dd>{x.included}</dd>
+                      </div>
+                      <div>
+                        <dt>Extra effort</dt>
+                        <dd>{x.effort}</dd>
+                      </div>
+                      <div>
+                        <dt>Stage</dt>
+                        <dd>{x.stage}</dd>
+                      </div>
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+              <p className="meta" style={{ marginTop: 14, fontSize: '0.92rem' }}>
+                Effort levels are rough guides, not estimates. Confirm each one when scoping.
+              </p>
+            </>
+          )}
+        </section>
+
         <div className="cols">
           <section className="card" aria-labelledby="why">
             <h3 id="why">Why this tier</h3>

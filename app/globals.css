@@ -191,3 +191,23 @@ input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visib
 /* The start screen has one button, so it sits in the middle. */
 .nav-inner.center { justify-content: center; }
 .nav-inner.center .btn { flex: 0 1 320px; }
+
+/* Add-ons on the summary */
+.addons { list-style: none; margin: 14px 0 0; padding: 0; }
+.addons li { padding: 18px 0; border-top: 1px solid var(--line); }
+.addon-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 12px; margin-bottom: 10px; }
+.addon-head strong { font-size: 1.08rem; }
+.level { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; padding: 3px 10px; border-radius: 999px; border: 1.5px solid var(--umber); white-space: nowrap; }
+.level-heavy { background: var(--umber); color: var(--oatmeal); }
+.level-moderate { background: var(--cloud); }
+.addons dl { margin: 0; display: grid; gap: 8px; }
+.addons dl > div { display: grid; gap: 2px; }
+.addons dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--umber-soft); }
+.addons dd { margin: 0; }
+.card-head .tag { margin-top: 0; }
+@media (min-width: 720px) {
+  .addons dl > div { grid-template-columns: 130px 1fr; gap: 16px; align-items: baseline; }
+}
+@media print {
+  .level-heavy { background: #fff; color: #000; }
+}

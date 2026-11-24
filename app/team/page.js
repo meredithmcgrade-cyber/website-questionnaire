@@ -72,7 +72,10 @@ export default async function Team({ searchParams }) {
                       <span className="meta">
                         {r.contact.name} | {date}
                       </span>
-                      <span className="tag">{rec.tierInfo.name}</span>
+                      <span className="tag">
+                        {rec.tierInfo.name}
+                        {rec.addOns.length > 0 ? ` + ${rec.addOns.length} add-on${rec.addOns.length === 1 ? '' : 's'}` : ''}
+                      </span>
                     </Link>
                   </li>
                 );
